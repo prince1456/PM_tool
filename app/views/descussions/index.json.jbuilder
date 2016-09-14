@@ -1,0 +1,1 @@
+json.array! @descussions, partial: 'descussions/descussion', as: :descussion

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Descussions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @descussions.each do |descussion| %>
+      <tr>
+        <td><%= descussion.title %></td>
+        <td><%= descussion.description %></td>
+        <td><%= link_to 'Show', descussion %></td>
+        <td><%= link_to 'Edit', edit_descussion_path(descussion) %></td>
+        <td><%= link_to 'Destroy', descussion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Descussion', new_descussion_path %>

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @project.due_date %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+
+<% @project.descussions.each do |desc| %>
+
+<%= desc.title %>
+<%= desc.description %>
+<% end %>
+
+
+
+<%= form_for(@descussion) do |f| %>
+  <% if @descussion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@descussion.errors.count, "error") %> prohibited this descussion from being saved:</h2>
+
+      <ul>
+      <% @descussion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

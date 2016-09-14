@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PmTool</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>PmTool</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        x
+    </head>
 
-  <body>
-  <%= link_to "Home", root_path %>
-    |
-
-     <%= link_to "about", about_path %>
-     <hr>
-    <%= yield %>
-  </body>
+    <body>
+        <%= link_to "Home", root_path %>
+        |
+        <%= link_to "new porject", new_project_path %>
+        |
+        <%= link_to "Projects", projects_path %>
+        |
+        <%= link_to "New Task", new_task_path %>
+        |
+        <%= link_to "Tasks", tasks_path %>
+        |
+        <%= link_to "About", about_path %>
+        <hr>
+        <%= yield %>
+    </body>
 </html>

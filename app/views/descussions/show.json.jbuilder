@@ -1,0 +1,1 @@
+json.partial! "descussions/descussion", descussion: @descussion
